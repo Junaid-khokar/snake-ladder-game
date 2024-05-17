@@ -15,7 +15,7 @@ body{
     width: 40rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     cursor: pointer;
 }
@@ -38,6 +38,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap:wrap;
     /* border: .1rem solid black; */
 }
 .btn
@@ -65,8 +66,8 @@ body{
 .player1
 {
     position: relative;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 55%;
+    width: 55%;
     border-radius: 50%;
     background-color: rgb(90, 4, 251);
     opacity: 1;
@@ -76,8 +77,8 @@ body{
 .player2
 {
     position: relative;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 55%;
+    width: 55%;
     border-radius: 50%;
     background-color: rgb(4, 144, 251);
     opacity: 1;
@@ -121,6 +122,24 @@ p{
     margin: 6px auto;
 }
 
-@media screen {
+@media (max-width : 700px) {
     
+    .container{
+        width: 90vw;
+        height: 80vh;
+        
+    }
+    .box
+    {
+        width: 65vw;
+        height: 65vw;
+    }
+    .disp
+    {
+        flex-direction: column;
+    }
+    #pera
+    {
+        width: 80vw;
+    }
 }
