@@ -2,11 +2,11 @@ let display = document.getElementById('show');
 let Box = document.getElementById('box');
 let button = document.getElementById('myBtn');
 let pera = document.getElementById('pera');
-let dice = new Audio('Dice.mp3');
-let steps = new Audio('steps.mp3');
-let snake = new Audio('snake.mp3');
-let laddder = new Audio('ladder.mp3');
-let win = new Audio('win.mp3');
+let dice = new Audio('music/Dice.mp3');
+let steps = new Audio('music/steps.mp3');
+let snake = new Audio('music/snake.mp3');
+let laddder = new Audio('music/ladder.mp3');
+let win = new Audio('music/win.mp3');
 let a = 1 ,b=0;
 let playerArr = [{x:0,y:10},{x:0,y:10}] ;
 let num1 = 0 ;
@@ -127,10 +127,15 @@ function snakeBite()
             {
                 button.disabled = true ;
             }
-        else
+        else if (turn%2!=0)
         {
             button.disabled = false ;
         }
+        else if (turn%2==0)
+            {
+                setTimeout(playing , 2000);
+            }
+
         console.log("turn",turn);
     }
             
@@ -139,15 +144,15 @@ function playElement(count)
                 
     if(turn%2==0)
         {
-            pera.innerText = "It's player2(light blue) turn";
+            pera.innerText = "It's COMPUTER's turn";
         }
         else{
-            pera.innerText = "It's player1(voilet) turn";
+            pera.innerText = "It's PLAYER'S turn";
         } 
 
      if(playerArr[0].x==1 && playerArr[0].y==1)
         {
-            pera.innerText = "PLAYER1(VOILET) IS THE WINNER!!";
+            pera.innerText = "PLAYER IS THE WINNER!!";
             button.disabled = true ;
             win.play();
             console.log("in0");
@@ -155,7 +160,7 @@ function playElement(count)
             return count ;
         }
     else if(playerArr[1].x==1 && playerArr[1].y==1){
-        pera.innerText = "PLAYER2(LIGHT BLUE) IS THE WINNER!!";
+        pera.innerText = "COMPUTER IS THE WINNER!!";
         button.disabled = true ;
         console.log("in1");
         win.play();
